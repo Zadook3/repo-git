@@ -1,1 +1,1 @@
-Cualquier cosa ERROR 300
+Si falla la pagina es por el ERROR 300
