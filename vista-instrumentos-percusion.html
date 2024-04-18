@@ -1,85 +1,144 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Instrumentos de percusion</title>
+    <title>Instrumentos de Percusión</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-
+    <style>
+        body {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+        }
+        .navbar {
+            background-color: blue !important;
+            color: white;
+            font-size: 20px;
+        }
+        .dropdown-menu {
+            background-color: blue !important;
+            color: white;
+            font-size: 20px;
+        }
+        .dropdown-item {
+            color: white !important;
+            font-size: 20px;
+        }
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            font-size: 20px;
+        }
+        .navbar-toggler {
+            color: white !important;
+        }
+        .title-box {
+            border: 2px solid white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .snake {
+            display: block;
+            text-align: center;
+            color: white;
+        }
+        .card-title {
+            color: blue;
+            font-size: 18px;
+        }
+        .badge {
+            background-color: transparent !important;
+            color: black !important;
+            font-size: 16px;
+            margin-top: 10px;
+            text-align: center;
+            display: block;
+        }
+        .btn-comprar {
+            background-color: blue;
+            color: white;
+            margin-top: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- barra de navegacion -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Snake</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="title-box">
+                <span>Instrumentos Musicales</span><br>
+                <span class="snake">"SNAKE"</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">Carrito</a>
+                        <a class="nav-link" href="vista-carrito.html">Carrito</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="vista-instrumentos-cuerda.html">Instrumentos de cuerda</a></li>
-                            <li><a class="dropdown-item" href="vista-instrumentos-percusion.html">Instrumentos de percusion</a></li>
+                            <li><a class="dropdown-item" href="vista-instrumentos-cuerda.html">Instrumentos de Cuerda</a></li>
+                            <li><a class="dropdown-item" href="vista-instrumentos-percusion.html">Instrumentos de Percusión</a></li>
                             <li><a class="dropdown-item" href="vista-audio.html">Audio</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#quienes-somos">Sobre nosotros</a>
+                        <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- carrito de compra -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            ...
-        </div>
-    </div>
-
-    <!-- tarjetas de productos -->
     <div class="d-flex justify-content-start">
         <div class="card" style="width: 18rem;">
-            <img src="https://masterselectronicsgt.com/wp-content/uploads/2023/10/DM8.jpg" class="card-img-top" alt="Imagen no disponible">
+            <img src="https://masterselectronicsgt.com/wp-content/uploads/2023/10/DM8.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Bateria electrica</h5>
+                <h5 class="card-title">Bateria Eléctrica - NUX DM-8</h5>
                 <p class="card-text">Compuesta por pads sensibles al tacto que emiten sonidos sampleados de tambores y platillos reales, ofrece una experiencia de batería versátil y silenciosa.</p>
-                <a href="#" class="btn btn-primary">NUX DM-8</a>
+                <span class="badge">$1.400.000</span>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('Bateria Eléctrica - NUX DM-8', 1400000)">Comprar</button>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img src="https://dojiw2m9tvv09.cloudfront.net/29454/product/X_a22f1-13446.jpg?45&time=1711673894" class="card-img-top" alt="Imagen no disponible">
+            <img src="https://dojiw2m9tvv09.cloudfront.net/29454/product/X_a22f1-13446.jpg?45&time=1711673894" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Bateria acustica</h5>
-                <p class="card-text">un conjunto de tambores y platillos, su característica distintiva es el sonido natural y potente que produce.</p>
-                <a href="#" class="btn btn-primary">22" ALPHA</a>
+                <h5 class="card-title">Bateria Acústica - 22" ALPHA</h5>
+                <p class="card-text">Un conjunto de tambores y platillos, su característica distintiva es el sonido natural y potente que produce.</p>
+                <span class="badge">$350.000</span>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('Bateria Acústica - 22 ALPHA', 350000)">Comprar</button>
             </div>
         </div>
     </div>
-    
-    <!-- tarjeta quienes somos -->
-    <div id="quienes-somos" class="card">
-        <div class="card-header">
-            Quienes somos <code></code>
-        </div>
-        <div class="card-body">
-            <p>ksjdflkajsdfkljaslñkgjjasjdglhasñdgaslkdg</p>
-        </div>
-    </div>
 
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var encontrado = productosEnCarrito.find(producto => producto.nombre === nombre);
+            if (encontrado) {
+                alert('¡Este producto ya está en el carrito!');
+            } else {
+                var producto = {
+                    nombre: nombre,
+                    precio: precio
+                };
+                productosEnCarrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+                alert('¡Producto agregado al carrito!');
+            }
+        }
+    </script>
 </body>
 </html>
