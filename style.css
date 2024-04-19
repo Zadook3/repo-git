@@ -68,3 +68,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.card-img-left {
+    float: left; /*deja la imagen del carrito a la izquierda*/
+}
+
