@@ -11,7 +11,6 @@
 
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="title-box">
@@ -65,24 +64,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function agregarAlCarrito(nombre, precio) {
-            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            var encontrado = productosEnCarrito.find(producto => producto.nombre === nombre);
-            if (encontrado) {
-                alert('¡Este producto ya está en el carrito!');
-            } else {
-                var producto = {
-                    nombre: nombre,
-                    precio: precio
-                };
-                productosEnCarrito.push(producto);
-                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-                alert('¡Producto agregado al carrito!');
-            }
-        }
-    </script>
 
 </body>
 </html>

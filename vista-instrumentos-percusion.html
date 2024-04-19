@@ -43,6 +43,7 @@
             </div>
         </div>
     </nav>
+
     <div class="d-flex justify-content-start">
         <div class="card" style="width: 18rem;">
             <img src="https://masterselectronicsgt.com/wp-content/uploads/2023/10/DM8.jpg" class="card-img-top" alt="...">
@@ -64,22 +65,5 @@
         </div>
     </div>
 
-    <script>
-        function agregarAlCarrito(nombre, precio) {
-            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            var encontrado = productosEnCarrito.find(producto => producto.nombre === nombre);
-            if (encontrado) {
-                alert('¡Este producto ya está en el carrito!');
-            } else {
-                var producto = {
-                    nombre: nombre,
-                    precio: precio
-                };
-                productosEnCarrito.push(producto);
-                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-                alert('¡Producto agregado al carrito!');
-            }
-        }
-    </script>
 </body>
 </html>

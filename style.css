@@ -38,7 +38,7 @@ body {
     color: white !important;
 }
 .title-box {
-    border: 2px solid white; /* Ajusta el valor del borde aquí */
+    border: 2px solid white; 
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
