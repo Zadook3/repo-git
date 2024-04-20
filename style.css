@@ -3,55 +3,67 @@
     height: 500px; /*ajusta la altura*/
     margin: auto; /* centra el carrusel en la página*/
 }
+
 #carouselExample img {
     height: 500px; /* Ajusta la altura de las imágenes del carrusel*/
 }
+
 body {
-    background-color: blue;
-    color: white;
+    background-color: rgb(229, 229, 229);
+    color: rgb(229, 229, 229);
     font-size: 20px;
 }
+
 .navbar {
     background-color: blue !important;
     color: white;
     font-size: 20px;
 }
+
 .dropdown-menu {
     background-color: blue !important;
-    color: white;
+    color: black;
     font-size: 20px;
 }
+
 .dropdown-item {
     color: white !important;
     font-size: 20px;
 }
+
 .navbar-brand,
 .nav-link {
     color: white !important;
 }
+
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1rem;
     padding-left: 1rem;
     font-size: 20px;
 }
+
 .navbar-toggler {
     color: white !important;
 }
+
 .title-box {
-    border: 2px solid white; 
+    border: 2px solid rgb(2, 0, 125); 
     padding: 10px;
     text-align: center;
     margin-bottom: 20px;
 }
+
 .snake {
     display: block;
     text-align: center;
     color: white;
 }
+
 .card-title {
     color: blue;
     font-size: 18px;
 }
+
 .badge {
     background-color: transparent !important;
     color: black !important;
@@ -60,6 +72,7 @@ body {
     text-align: center;
     display: block;
 }
+
 .btn-comprar {
     background-color: blue;
     color: white;
@@ -68,7 +81,14 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .card-img-left {
     float: left; /*deja la imagen del carrito a la izquierda*/
 }
 
+.dropdown-item:hover, /*cuando el mouse esta sobre el recuadro*/
+.dropdown-item:focus, /*cuando se selecciona con el teclado*/
+.dropdown-item:active { /*cuando se hace click*/
+    background-color: rgb(2, 0, 125); /* Cambia el color de fondo al color deseado */
+    color: #ffffff; /* Cambia el color del texto para que sea legible */
+}
