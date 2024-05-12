@@ -37,6 +37,9 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="vista-mantencion.html">Mantención</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a> <!-- Actualización del enlace -->
                     </li>
                 </ul>
@@ -47,33 +50,47 @@
     <div class="container">
         <h1 class="title-box">Carrito de Compras</h1>
         <div id="recuadro-carrito" class="recuadro-carrito">
+            <!-- Aquí se mostrarán los productos en el carrito -->
         </div>
         <div id="total-pagar" class="total-pagar"></div>
     </div>
 
-    <div class="container">
-        <img src="https://www.planetmusic.cl/wp-content/uploads/2023/08/Shure-SE215-CL-Audifonos-Intraurales-de-Monitoreo-Planet-Music-1200x1200-1.jpg" class="card-img-left" alt="..." style="max-width: 12.5%; margin-right: 10px;">
-        <h1 style="color: black;">In-ear - Shure SE215-CL</h1>
-        <p style="color: black;">$155.000</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Total a pagar</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" style="color: black;">
-                El total a pagar es de: $155.000
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Pagar</button>
-                </div>
-            </div>
-            </div>
-        </div>
-            </div>
+    <script>
+        window.onload = function() {
+            // Mostrar los productos en el carrito
+            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var container = document.getElementById('recuadro-carrito');
+            var totalPagar = document.getElementById('total-pagar');
+            var total = 0;
 
+            productosEnCarrito.forEach(function(producto) {
+                var productoHTML = `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${producto.nombre}</h5>
+                            <p class="card-text">$${producto.precio}</p>
+                            <button class="btn btn-eliminar" onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += productoHTML;
+                total += producto.precio;
+            });
+
+            // Mostrar el total a pagar
+            totalPagar.textContent = `TOTAL A PAGAR: $${total}`;
+        };
+
+        // Función para eliminar un producto del carrito
+        function eliminarProducto(nombre) {
+            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var index = productosEnCarrito.findIndex(producto => producto.nombre === nombre);
+            if (index !== -1) {
+                productosEnCarrito.splice(index, 1);
+                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+                location.reload(); // Recargar la página para reflejar los cambios
+            }
+        }
+    </script>
 </body>
 </html>
