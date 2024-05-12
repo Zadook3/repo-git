@@ -9,8 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        .card-body {
+            text-align: center;
+        }
+
+        .card-title,
+        .card-text {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="title-box">
@@ -37,6 +48,9 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="vista-mantencion.html">Mantención</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a>
                     </li>
                 </ul>
@@ -51,7 +65,7 @@
                 <h5 class="card-title">Micrófono - Shure SV100</h5>
                 <p class="card-text">El micrófono Shure SV100 es una opción confiable y versátil para una variedad de aplicaciones de grabación y presentaciones en vivo.</p>
                 <span class="badge">$40.000</span>
-                <button type="button" class="btn btn-comprar">Comprar</button>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('Micrófono - Shure SV100', 40000)">Comprar</button>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -60,10 +74,28 @@
                 <h5 class="card-title">In-ear - Shure SE215-CL</h5>
                 <p class="card-text">El auricular Shure SE215-CL es un modelo intrauditivo diseñado para proporcionar una experiencia auditiva de alta calidad en un formato compacto y cómodo.</p>
                 <span class="badge">$155.000</span>
-                <button type="button" class="btn btn-comprar">Comprar</button>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('In-ear - Shure SE215-CL', 155000)">Comprar</button>
             </div>
         </div>
     </div>
+
+    <script>
+        function agregarAlCarrito(nombre, precio) {
+            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var encontrado = productosEnCarrito.find(producto => producto.nombre === nombre);
+            if (encontrado) {
+                alert('¡Este producto ya está en el carrito!');
+            } else {
+                var producto = {
+                    nombre: nombre,
+                    precio: precio
+                };
+                productosEnCarrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+                alert('¡Producto agregado al carrito!');
+            }
+        }
+    </script>
 
 </body>
 </html>
