@@ -9,6 +9,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        .card-title,
+        .card-text {
+            text-align: center;
+        }
+        
+        .card {
+            margin-right: 10px; /* Agregado para separación entre tarjetas */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -37,13 +47,15 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="vista-mantencion.html">Mantención</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="d-flex justify-content-start">
         <div class="card" style="width: 18rem;">
             <img src="https://lacasadelmusico.cl/wp-content/uploads/2024/04/212820-scaled.webp" class="card-img-top" alt="...">
@@ -51,7 +63,7 @@
                 <h5 class="card-title">Bajo - Ibanez SR305EDX</h5>
                 <p class="card-text">Una versión ampliada del bajo estándar de 4 cuerdas, con una cuerda adicional afinada típicamente una cuarta por debajo de la cuerda más baja del bajo estándar.</p>
                 <span class="badge">$510.000</span>
-                <button type="button" class="btn btn-comprar">Comprar</button>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('Bajo - Ibanez SR305EDX', 510000)">Comprar</button>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -60,10 +72,30 @@
                 <h5 class="card-title">Guitarra - Gibson Dave Mustaine Flying V</h5>
                 <p class="card-text">Un ícono del diseño en el mundo de las guitarras eléctricas. Su distintiva forma en V le confiere un aspecto aerodinámico y agresivo.</p>
                 <span class="badge">$2.900.000</span>
-                <button type="button" class="btn btn-comprar">Comprar</button>
+                <button type="button" class="btn btn-comprar" onclick="agregarAlCarrito('Guitarra - Gibson Dave Mustaine Flying V', 2900000)">Comprar</button>
             </div>
         </div>
     </div>
 
+    <script>
+        // Función para agregar un producto al carrito (almacenado en localStorage)
+        function agregarAlCarrito(nombre, precio) {
+            // Comprobar si el producto ya está en el carrito
+            var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            var encontrado = productosEnCarrito.find(producto => producto.nombre === nombre);
+            if (encontrado) {
+                alert('¡Este producto ya está en el carrito!');
+            } else {
+                // Agregar el producto al carrito
+                var producto = {
+                    nombre: nombre,
+                    precio: precio
+                };
+                productosEnCarrito.push(producto);
+                localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+                alert('¡Producto agregado al carrito!');
+            }
+        }
+    </script>
 </body>
 </html>
