@@ -8,14 +8,37 @@
     <title>Carrito</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        body {
+            color: black;
+        }
+        .navbar .nav-link,
+        .navbar .dropdown-item,
+        .title-box {
+            color: white;
+        }
+        .navbar .title-box .snake {
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        h1 {
+            color: black;
+            font-weight: 600; /* Negrita intermedia */
+        }
+        .total-pagar {
+            color: black;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
             <div class="title-box">
                 <span>Instrumentos Musicales</span><br>
-                <span class="snake">"SNAKE"</span>
+                <span class="snake">SYMPHONIX</span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +63,7 @@
                         <a class="nav-link" href="vista-mantencion.html">Mantención</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a> <!-- Actualización del enlace -->
+                        <a class="nav-link active" aria-current="page" href="vista-sobrenosotros.html">Sobre Nosotros</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +71,7 @@
     </nav>
 
     <div class="container">
-        <h1 class="title-box">Carrito de Compras</h1>
+        <h1 class="text-center">CARRITO DE COMPRAS</h1>
         <div id="recuadro-carrito" class="recuadro-carrito">
             <!-- Aquí se mostrarán los productos en el carrito -->
         </div>
