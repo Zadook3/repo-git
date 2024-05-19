@@ -84,3 +84,17 @@ body {
 .card-text {
     text-align: center;
 }
+
+.custom-card-bottom img {
+    max-height: 300px;
+    object-fit: cover;
+}
+.custom-card-text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
