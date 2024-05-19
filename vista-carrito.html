@@ -90,31 +90,30 @@
             </div>
         </div>
     </div>
-
     <script>
         window.onload = function() {
             var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             var container = document.getElementById('recuadro-carrito');
             var totalPagar = document.getElementById('total-pagar');
             var total = 0;
-
+    
             productosEnCarrito.forEach(function(producto) {
                 var productoHTML = `
                     <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">${producto.nombre}</h5>
-                            <p class="card-text">$${producto.precio}</p>
-                            <button class="btn btn-eliminar" onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
+                            <p class="card-text">$${producto.precio.toLocaleString('es-CL')}</p>
+                            <button class="btn btn-eliminar btn-danger" onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
                         </div>
                     </div>
                 `;
                 container.innerHTML += productoHTML;
                 total += producto.precio;
             });
-
-            totalPagar.textContent = `TOTAL A PAGAR: $${total}`;
+    
+            totalPagar.textContent = `TOTAL A PAGAR: $${total.toLocaleString('es-CL')}`;
         };
-
+    
         function eliminarProducto(nombre) {
             var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             var index = productosEnCarrito.findIndex(producto => producto.nombre === nombre);
@@ -125,5 +124,6 @@
             }
         }
     </script>
+        
 </body>
 </html>
