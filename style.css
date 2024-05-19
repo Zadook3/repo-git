@@ -69,11 +69,11 @@ body {
     margin-right: auto;
 }
 
-.dropdown-item:hover, /*cuando el mouse esta sobre el recuadro*/
-.dropdown-item:focus, /*cuando se selecciona con el teclado*/
-.dropdown-item:active { /*cuando se hace click*/
-    background-color: rgb(2, 0, 125); /* Cambia el color de fondo al color deseado */
-    color: #ffffff; /* Cambia el color del texto para que sea legible */
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:active {
+    background-color: blueviolet;
+    color: #ffffff; 
 }
 
 .card-body {
@@ -97,4 +97,10 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.card {
+    border: 2px solid blueviolet; /* Color y grosor del borde */
+    border-radius: 7px; /* Radio de borde para suavizar las esquinas */
+    /* Otros estilos de tu elección */
 }

@@ -24,7 +24,7 @@
         }
         h1 {
             color: black;
-            font-weight: 600; /* Negrita intermedia */
+            font-weight: 600; 
         }
         .total-pagar {
             color: black;
@@ -72,7 +72,6 @@
     <div class="container">
         <h1 class="text-center">CARRITO DE COMPRAS</h1>
         <div id="recuadro-carrito" class="recuadro-carrito">
-            <!-- Aquí se mostrarán los productos en el carrito -->
         </div>
         <div id="total-pagar" class="total-pagar"></div>
     </div>
@@ -94,7 +93,6 @@
 
     <script>
         window.onload = function() {
-            // Mostrar los productos en el carrito
             var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             var container = document.getElementById('recuadro-carrito');
             var totalPagar = document.getElementById('total-pagar');
@@ -114,18 +112,16 @@
                 total += producto.precio;
             });
 
-            // Mostrar el total a pagar
             totalPagar.textContent = `TOTAL A PAGAR: $${total}`;
         };
 
-        // Función para eliminar un producto del carrito
         function eliminarProducto(nombre) {
             var productosEnCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
             var index = productosEnCarrito.findIndex(producto => producto.nombre === nombre);
             if (index !== -1) {
                 productosEnCarrito.splice(index, 1);
                 localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
-                location.reload(); // Recargar la página para reflejar los cambios
+                location.reload();
             }
         }
     </script>
